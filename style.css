@@ -19,6 +19,7 @@ body {
     height: 400px;
     gap: 0;
     flex-wrap: wrap;
+    overflow: hidden;
 }
 
 .container-item {
