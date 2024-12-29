@@ -14,15 +14,15 @@ body {
 
 .container {
     display: flex;
-    flex-wrap: wrap;
     border: 2px solid #3e3e3e;
     width: 400px;
     height: 400px;
     gap: 0;
+    flex-wrap: wrap;
 }
 
 .container-item {
     border: 1px solid #000000;
-    width: 25px;'
-    height: 25px;'
+    flex: 1 1 25px;
+    height: auto;
 }
