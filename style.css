@@ -26,4 +26,5 @@ body {
     border: 1px solid #000000;
     flex: 1 1 25px;
     height: auto;
+    display: inline-block;
 }
