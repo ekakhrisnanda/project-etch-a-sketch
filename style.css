@@ -15,8 +15,8 @@ body {
 .container {
     display: flex;
     border: 2px solid #3e3e3e;
-    width: 400px;
-    height: 400px;
+    width: 425px;
+    height: 500px;
     gap: 0;
     flex-wrap: wrap;
     overflow: hidden;
