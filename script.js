@@ -27,8 +27,8 @@ function createGrid() {
     for (let i = 0; i < gridNum * gridNum; i++) {
         const gridItem = document.createElement('div');
         gridItem.classList.add('container-item');
-        gridItem.style.width = gridSize;
-        gridItem.style.height = gridSize;
+        gridItem.style.width = `${gridSize}px`;
+        gridItem.style.height = `${gridSize}px`;
         container.appendChild(gridItem);
     
         gridItem.addEventListener('mouseover', e => {
