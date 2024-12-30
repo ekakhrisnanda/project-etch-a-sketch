@@ -27,14 +27,3 @@ for (let i = 0; i < gridNum * gridNum; i++) {
     });
 
 }
-
-// create a button from html to ask an input of how many grids they want to
-// create a function to shows the input
-// if the newGridNumbers more than 100, it shows alert to input less than that and repeat the prompt
-// else do multiplication of input x input
-// stores the input in inputNum variable
-
-// search how to make a default arguments/parameters for loop
-// create a variable and store 16 as default value
-// in for loop, change the argument to variable * variable
-// if there is a new input, change the variable value to the input newGridNumbers
