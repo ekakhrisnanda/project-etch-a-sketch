@@ -8,7 +8,7 @@ function askInput() {
     let newGridNum = prompt('How many do you want the grids to be?', 16);
 
     if (newGridNum > 100 || isNaN(newGridNum)) {
-        alert('Please insert a Number');
+        alert('Please insert a Number or Number less than 100');
         return askInput();
     } else {
         return gridNum = newGridNum;
