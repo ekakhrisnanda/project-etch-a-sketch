@@ -15,8 +15,8 @@ body {
 .container {
     display: flex;
     border: 2px solid #3e3e3e;
-    width: 425px;
-    height: 500px;
+    width: 480px;
+    height: 480px;
     gap: 0;
     flex-wrap: wrap;
     overflow: hidden;
@@ -24,7 +24,7 @@ body {
 
 .container-item {
     border: 1px solid #000000;
-    flex: 1 1 25px;
-    height: auto;
+    flex: 1 1 30px;
+    height: 30px;
     display: inline-block;
 }
