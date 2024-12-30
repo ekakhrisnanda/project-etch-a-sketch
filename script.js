@@ -23,7 +23,7 @@ inputButton.addEventListener('click', askInput);
 function createGrid() {
     container.innerHTML = '';
 
-    let gridSize = (480 / gridNum) - 2;
+    let gridSize = Math.floor((480 / gridNum) - 2);
     for (let i = 0; i < gridNum * gridNum; i++) {
         const gridItem = document.createElement('div');
         gridItem.classList.add('container-item');
