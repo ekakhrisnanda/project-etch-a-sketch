@@ -7,23 +7,34 @@ let gridNum = 16;
 function askInput() {
     let newGridNum = prompt('How many do you want the grids to be?', 16);
 
-    if (newGridNum > 100 || isNaN(newGridNum)) {
-        alert('Please insert a Number or Number less than 100');
+    if (newGridNum > 100 || isNaN(newGridNum) || newGridNum < 1) {
+        alert('Please insert a Number or Number from 1 to 100');
         return askInput();
     } else {
-        return gridNum = newGridNum;
+        gridNum = parseInt(newGridNum);
+        return createGrid(gridNum);
+        
     }
 }
 
 inputButton.addEventListener('click', askInput);
 
-for (let i = 0; i < gridNum * gridNum; i++) {
-    const gridItem = document.createElement('div');
-    gridItem.classList.add('container-item');
-    container.appendChild(gridItem);
 
-    gridItem.addEventListener('mouseover', e => {
-        e.target.style.backgroundColor = 'black';
-    });
+function createGrid() {
+    container.innerHTML = '';
 
+    let gridSize = 480 / gridNum;
+    for (let i = 0; i < gridNum * gridNum; i++) {
+        const gridItem = document.createElement('div');
+        gridItem.classList.add('container-item');
+        gridItem.style.width = gridSize;
+        gridItem.style.height = gridSize;
+        container.appendChild(gridItem);
+    
+        gridItem.addEventListener('mouseover', e => {
+            e.target.style.backgroundColor = 'black';
+        });
+    }
 }
+
+createGrid(gridNum);
