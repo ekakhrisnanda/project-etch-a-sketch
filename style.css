@@ -21,11 +21,12 @@ body {
     height: 480px;
     flex-wrap: wrap;
     overflow: hidden;
+    --grid-item: 16;
 }
 
 .container-item {
     border: 1px solid #000000;
-    width: calc(100% / 16);
-    height: calc(100% / 16);
+    width: calc(100% / var(--grid-item));
+    height: calc(100% / var(--grid-item));
     display: inline-block;
 }
