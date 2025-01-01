@@ -21,12 +21,12 @@ body {
     height: 480px;
     flex-wrap: wrap;
     overflow: hidden;
-    --grid-item: 16;
+    --grid-num: 16;
 }
 
 .container-item {
     border: 1px solid #000000;
-    flex: 0 0 calc(100% / var(--grid-item));
-    height: calc(100% / var(--grid-item));
+    flex: 0 0 calc(100% / var(--grid-num));
+    height: calc(100% / var(--grid-num));
     display: inline-block;
 }
