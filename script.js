@@ -23,18 +23,17 @@ inputButton.addEventListener('click', askInput);
 function createGrid() {
     container.innerHTML = '';
 
-    let gridSize = Math.floor((480 / gridNum) - 2);
     for (let i = 0; i < gridNum * gridNum; i++) {
         const gridItem = document.createElement('div');
         gridItem.classList.add('container-item');
-        gridItem.style.width = `${gridSize}px`;
-        gridItem.style.height = `${gridSize}px`;
         container.appendChild(gridItem);
     
         gridItem.addEventListener('mouseover', e => {
             e.target.style.backgroundColor = 'black';
         });
     }
+
+    container.style.setProperty('--grid-num', gridNum);
 }
 
 createGrid(gridNum);
