@@ -18,33 +18,23 @@ function askInput() {
 
 inputButton.addEventListener('click', askInput);
 
-function getRandomNumber() {
-    return Math.floor(Math.random() * 256);
-}
-
-function setRandomColor() {
-    let opacity = 0.1;
-    return `rgba(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()}, ${opacity})`;
-}
-
-// loop in every 10 hovered, the color gets more highers in opacity
-
 function createGrid() {
     container.innerHTML = '';
+    let opacity = 0;
 
     for (let i = 0; i < gridNum * gridNum; i++) {
         const gridItem = document.createElement('div');
         gridItem.classList.add('container-item');
         container.appendChild(gridItem);
-    
-        gridItem.addEventListener('mouseover', e => {
-            let opacity = 0.1;
-            for(let i = 0; i < 10; i++) {
+
+        for(let i = 0; i < 10; i++) {
+            gridItem.addEventListener('mouseover', e => {
                 opacity += 0.1;
                 e.target.style.backgroundColor = `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${opacity})`;
                 console.log(opacity);
-            }
-        });
+            });
+    
+        }
     }
 
     container.style.setProperty('--grid-num', gridNum);
