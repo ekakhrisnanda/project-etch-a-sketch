@@ -1,4 +1,3 @@
-// create grid squares
 const container = document.querySelector('.container');
 const inputButton = document.querySelector('.ask-input');
 
@@ -19,6 +18,14 @@ function askInput() {
 
 inputButton.addEventListener('click', askInput);
 
+function getRandomNumber() {
+    return Math.floor(Math.random() * 256);
+}
+
+function setRandomColor() {
+    return `rgba(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()})`;
+}
+
 
 function createGrid() {
     container.innerHTML = '';
@@ -29,7 +36,7 @@ function createGrid() {
         container.appendChild(gridItem);
     
         gridItem.addEventListener('mouseover', e => {
-            e.target.style.backgroundColor = 'black';
+            e.target.style.backgroundColor = setRandomColor();
         });
     }
 
