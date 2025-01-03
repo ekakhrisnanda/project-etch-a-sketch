@@ -23,9 +23,11 @@ function getRandomNumber() {
 }
 
 function setRandomColor() {
-    return `rgba(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()})`;
+    let opacity = 0.1;
+    return `rgba(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()}, ${opacity})`;
 }
 
+// loop in every 10 hovered, the color gets more highers in opacity
 
 function createGrid() {
     container.innerHTML = '';
@@ -36,7 +38,12 @@ function createGrid() {
         container.appendChild(gridItem);
     
         gridItem.addEventListener('mouseover', e => {
-            e.target.style.backgroundColor = setRandomColor();
+            let opacity = 0.1;
+            for(let i = 0; i < 10; i++) {
+                opacity += 0.1;
+                e.target.style.backgroundColor = `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${opacity})`;
+                console.log(opacity);
+            }
         });
     }
 
