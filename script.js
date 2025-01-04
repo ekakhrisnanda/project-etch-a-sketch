@@ -18,23 +18,28 @@ function askInput() {
 
 inputButton.addEventListener('click', askInput);
 
+let gridOpacityCounter = 0;
+
 function createGrid() {
     container.innerHTML = '';
-    let opacity = 0;
 
     for (let i = 0; i < gridNum * gridNum; i++) {
         const gridItem = document.createElement('div');
         gridItem.classList.add('container-item');
         container.appendChild(gridItem);
 
-        for(let i = 0; i < 10; i++) {
-            gridItem.addEventListener('mouseover', e => {
-                opacity += 0.1;
-                e.target.style.backgroundColor = `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${opacity})`;
-                console.log(opacity);
-            });
+        gridItem.addEventListener('mouseover', e => {
+            gridOpacityCounter++;
+            console.log(gridOpacityCounter);
+            let opacity = (gridOpacityCounter % 11) / 10;
+            if (opacity === 0) {
+                opacity = 0.1;
+            }
+
+            e.target.style.backgroundColor = `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${opacity})`;
+            console.log('Current Opacity: ' + opacity);
+        });
     
-        }
     }
 
     container.style.setProperty('--grid-num', gridNum);
